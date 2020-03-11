@@ -28,14 +28,14 @@ def fill_fields(text, fields):
 form = fill_fields(resource.form, resource.testfields)
 notary_ack = fill_fields(resource.notary_ack, resource.testfields)
 
-pdf = PDF()
+pdf = PDF(orientation="P", format="letter")
 pdf.alias_nb_pages()
 pdf.add_page()
 pdf.set_font("Times", "", 14)
 pdf.multi_cell(
-    0,
+    170,
     6,
-    "California Uniform Statutory Form Power of Attorney\n(California Probate Code §4401)",
+    "California Uniform Statutory Form\nPower of Attorney\n(California Probate Code §4401)",
     border=1,
     align="C",
 )
@@ -44,6 +44,6 @@ pdf.multi_cell(0, 4, resource.preamble, align="J", border=0)
 pdf.set_font("Times", "", 12)
 pdf.multi_cell(0, 5, form, align="L", border=0)
 pdf.set_font("Times", "", 10)
-pdf.multi_cell(0, 4, resource.notary_box, border=1, align="L")
+pdf.multi_cell(70, 4, resource.notary_box, border=1, align="J")
 pdf.multi_cell(0, 4, resource.notary_ack, border=0, align="L")
 pdf.output("poa_test.pdf", "F")
