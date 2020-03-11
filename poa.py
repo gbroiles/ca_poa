@@ -1,6 +1,8 @@
 from fpdf import FPDF
 import resource
 
+MARGIN = 15
+
 
 class PDF(FPDF):
     def footer(self):
@@ -15,11 +17,11 @@ class PDF(FPDF):
 def fill_fields(text, fields):
     for field, value in fields.items():
         field = "[{}]".format(field)
-        print(field, value)
-        if text.find(field):
-            print("Found {}".format(field))
+#        print(field, value)
+#        if text.find(field):
+#            print("Found {}".format(field))
         text.replace(field, value)
-    print(text)
+#    print(text)
     return text
 
 
@@ -30,20 +32,31 @@ notary_ack = fill_fields(resource.notary_ack, resource.testfields)
 
 pdf = PDF(orientation="P", format="letter")
 pdf.alias_nb_pages()
+pdf.set_margins(MARGIN, MARGIN, MARGIN)
 pdf.add_page()
 pdf.set_font("Times", "", 14)
 pdf.multi_cell(
-    170,
+    0,
     6,
     "California Uniform Statutory Form\nPower of Attorney\n(California Probate Code §4401)",
-    border=1,
+    border=0,
     align="C",
 )
-pdf.set_font("Times", "", 10)
-pdf.multi_cell(0, 4, resource.preamble, align="J", border=0)
+pdf.set_font("Times", "", 9)
+pdf.write(4, resource.preamble)
 pdf.set_font("Times", "", 12)
-pdf.multi_cell(0, 5, form, align="L", border=0)
+pdf.write(5, resource.appointment)
+pdf.set_font("Times", "", 9)
+pdf.write(4, resource.preamble2)
+pdf.set_font("Times", "", 12)
+pdf.write(5, form)
+pdf.set_font("Times", "", 9)
+pdf.write(4, resource.supplement)
+pdf.add_page()
+pdf.set_font("Times", "", 12)
+pdf.write(5, resource.multiple_agent)
+pdf.write(5, resource.signature_block)
 pdf.set_font("Times", "", 10)
-pdf.multi_cell(70, 4, resource.notary_box, border=1, align="J")
-pdf.multi_cell(0, 4, resource.notary_ack, border=0, align="L")
+pdf.multi_cell(80, 4, resource.notary_box, border=1, align="L")
+pdf.write(4, notary_ack)
 pdf.output("poa_test.pdf", "F")
