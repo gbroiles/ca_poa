@@ -18,7 +18,7 @@ def fill_fields(text, fields):
     for field, value in fields.items():
         field = "[{}]".format(field)
         if text.find(field):
-#            print("Found {}".format(field))
+            #            print("Found {}".format(field))
             text = text.replace(field, value)
     return text
 
