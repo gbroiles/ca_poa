@@ -51,13 +51,17 @@ ON THE FOLLOWING LINES YOU MAY GIVE SPECIAL INSTRUCTIONS LIMITING OR EXTENDING T
 [empty_line]
 
 UNLESS YOU DIRECT OTHERWISE ABOVE, THIS POWER OF ATTORNEY IS EFFECTIVE IMMEDIATELY AND WILL CONTINUE UNTIL IT IS REVOKED.
-
-This power of attorney will continue to be effective even though I become incapacitated.
-
-STRIKE THE PRECEDING SENTENCE IF YOU DO NOT WANT THIS POWER OF ATTORNEY TO CONTINUE IF YOU BECOME INCAPACITATED.
 """
 
+incapacity = """
+This power of attorney will continue to be effective even though I become incapacitated.
+
+"""
+
+durable_strike = """ STRIKE THE PRECEDING SENTENCE IF YOU DO NOT WANT THIS POWER OF ATTORNEY TO CONTINUE IF YOU BECOME INCAPACITATED.  """
+
 multiple_agent = """
+
 EXERCISE OF POWER OF ATTORNEY WHERE MORE THAN ONE AGENT DESIGNATED
 If I have designated more than one agent, the agents are to act [joint_powers].
 """
