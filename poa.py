@@ -17,18 +17,22 @@ class PDF(FPDF):
 def fill_fields(text, fields):
     for field, value in fields.items():
         field = "[{}]".format(field)
-#        print(field, value)
-#        if text.find(field):
+        if text.find(field):
 #            print("Found {}".format(field))
-        text.replace(field, value)
-#    print(text)
+            text = text.replace(field, value)
     return text
 
 
 # Instantiation of inherited class
 
+appointment = fill_fields(resource.appointment, resource.testfields)
 form = fill_fields(resource.form, resource.testfields)
+supplement = fill_fields(resource.supplement, resource.testfields)
+multiple_agent = fill_fields(resource.multiple_agent, resource.testfields)
+supplement = fill_fields(resource.supplement, resource.testfields)
+signature_block = fill_fields(resource.signature_block, resource.testfields)
 notary_ack = fill_fields(resource.notary_ack, resource.testfields)
+
 
 pdf = PDF(orientation="P", format="letter")
 pdf.alias_nb_pages()
@@ -45,17 +49,17 @@ pdf.multi_cell(
 pdf.set_font("Times", "", 9)
 pdf.write(4, resource.preamble)
 pdf.set_font("Times", "", 12)
-pdf.write(5, resource.appointment)
+pdf.write(5, appointment)
 pdf.set_font("Times", "", 9)
 pdf.write(4, resource.preamble2)
 pdf.set_font("Times", "", 12)
 pdf.write(5, form)
 pdf.set_font("Times", "", 9)
-pdf.write(4, resource.supplement)
+pdf.write(4, supplement)
 pdf.add_page()
 pdf.set_font("Times", "", 12)
-pdf.write(5, resource.multiple_agent)
-pdf.write(5, resource.signature_block)
+pdf.write(5, multiple_agent)
+pdf.write(5, signature_block)
 pdf.set_font("Times", "", 10)
 pdf.multi_cell(80, 4, resource.notary_box, border=1, align="L")
 pdf.write(4, notary_ack)

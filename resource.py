@@ -1,7 +1,7 @@
 testfields = {
     "principal_name": "Jasper Floppydog",
     "agent_list": "Emma Dog, Charlie Dog, and Ginger Dog",
-    "empty_line": ("_" * 60),
+    "empty_line": ("_" * 100),
     "joint_powers": "SEPARATELY",
     "signature_line": ("_" * 30),
     "day_num": "30th",
@@ -45,7 +45,9 @@ YOU NEED NOT INITIAL ANY OTHER LINES IF YOU INITIAL LINE (N).
 
 SPECIAL INSTRUCTIONS:
 ON THE FOLLOWING LINES YOU MAY GIVE SPECIAL INSTRUCTIONS LIMITING OR EXTENDING THE POWERS GRANTED TO YOUR AGENT.
+
 [empty_line]
+
 [empty_line]
 
 UNLESS YOU DIRECT OTHERWISE ABOVE, THIS POWER OF ATTORNEY IS EFFECTIVE IMMEDIATELY AND WILL CONTINUE UNTIL IT IS REVOKED.
@@ -67,7 +69,7 @@ I agree that any third party who receives a copy of this document may act under 
 Signed this [day_num] day of [month], [year].
 
 
-______________________________
+[signature_line]
 [principal_name]
 State of [notarization_state], County of [notarization_county] 
 
@@ -83,7 +85,7 @@ notary_ack = """
 State of California
 County of [notarization_county]
 
-On [empty_field] before me, [empty_field], personally appeared [principal_name], who proved to me on the basis of satisfactory evidence to be the person(s) whose name(s) is/are subscribed to the within instrument and acknowledged to me that he/she/they executed the same in his/her/their authorized capacity(ies), and that by his/her/their signature(s) on the instrument the person(s), or the entity upon behalf of which the person(s) acted, executed the instrument.
+On [empty_field] before me, [empty_field][empty_field], personally appeared [principal_name], who proved to me on the basis of satisfactory evidence to be the person(s) whose name(s) is/are subscribed to the within instrument and acknowledged to me that he/she/they executed the same in his/her/their authorized capacity(ies), and that by his/her/their signature(s) on the instrument the person(s), or the entity upon behalf of which the person(s) acted, executed the instrument.
 
 I certify under PENALTY OF PERJURY under the laws of the State of California that the foregoing paragraph is true and correct.
 
