@@ -1,7 +1,7 @@
 testfields = {
     "principal_name": "Jasper Floppydog",
     "agent_list": "Emma Dog, Charlie Dog, and Ginger Dog",
-    "empty_line": ("_" * 100),
+    "empty_line": ("_" * 80),
     "joint_powers": "SEPARATELY",
     "signature_line": ("_" * 30),
     "day_num": "30th",
@@ -12,12 +12,11 @@ testfields = {
     "empty_field": ("_" * 20),
 }
 
-preamble = """NOTICE: THE POWERS GRANTED BY THIS DOCUMENT ARE BROAD AND SWEEPING. THEY ARE EXPLAINED IN THE UNIFORM STATUTORY FORM POWER OF ATTORNEY ACT (CALIFORNIA PROBATE CODE SECTIONS 4400-4465). THE POWERS LISTED IN THIS DOCUMENT DO NOT INCLUDE ALL POWERS THAT ARE AVAILABLE UNDER THE PROBATE CODE. ADDITIONAL POWERS AVAILABLE UNDER THE PROBATE CODE MAY BE ADDED BY SPECIFICALLY LISTING THEM UNDER THE SPECIAL INSTRUCTIONS SECTION OF THIS DOCUMENT. IF YOU HAVE ANY QUESTIONS ABOUT THESE POWERS, OBTAIN COMPETENT LEGAL ADVICE. THIS DOCUMENT DOES NOT AUTHORIZE ANYONE TO MAKE MEDICAL AND OTHER HEALTH-CARE DECISIONS FOR YOU. YOU MAY REVOKE THIS POWER OF ATTORNEY IF YOU LATER WISH TO DO SO.
+preamble = """NOTICE: THE POWERS GRANTED BY THIS DOCUMENT ARE BROAD AND SWEEPING. THEY ARE EXPLAINED IN THE UNIFORM STATUTORY FORM POWER OF ATTORNEY ACT (CALIFORNIA PROBATE CODE SECTIONS 4400-4465). THE POWERS LISTED IN THIS DOCUMENT DO NOT INCLUDE ALL POWERS THAT ARE AVAILABLE UNDER THE PROBATE CODE. ADDITIONAL POWERS AVAILABLE UNDER THE PROBATE CODE MAY BE ADDED BY SPECIFICALLY LISTING THEM UNDER THE SPECIAL INSTRUCTIONS SECTION OF THIS DOCUMENT. IF YOU HAVE ANY QUESTIONS ABOUT THESE POWERS, OBTAIN COMPETENT LEGAL ADVICE. THIS DOCUMENT DOES NOT AUTHORIZE ANYONE TO MAKE MEDICAL AND OTHER HEALTH-CARE DECISIONS FOR YOU. YOU MAY REVOKE THIS POWER OF ATTORNEY IF YOU LATER WISH TO DO SO. \n
 """
-appointment = """I, [principal_name], appoint [agent_list] as my agent (attorney-in-fact) to act for me in any lawful way with respect to the following initialed subjects:
-"""
+appointment = """I, [principal_name], appoint [agent_list] as my agent (attorney-in-fact) to act for me in any lawful way with respect to the following initialed subjects:\n"""
 
-preamble2 = """TO GRANT ALL OF THE FOLLOWING POWERS, INITIAL THE LINE IN FRONT OF (N) AND IGNORE THE LINES IN FRONT OF THE OTHER POWERS. TO GRANT ONE OR MORE, BUT FEWER THAN ALL, OF THE FOLLOWING POWERS, INITIAL THE LINE IN FRONT OF EACH POWER YOU ARE GRANTING. TO WITHHOLD A POWER, DO NOT INITIAL THE LINE IN FRONT OF IT. YOU MAY, BUT NEED NOT, CROSS OUT EACH POWER WITHHELD."""
+preamble2 = """TO GRANT ALL OF THE FOLLOWING POWERS, INITIAL THE LINE IN FRONT OF (N) AND IGNORE THE LINES IN FRONT OF THE OTHER POWERS. TO GRANT ONE OR MORE, BUT FEWER THAN ALL, OF THE FOLLOWING POWERS, INITIAL THE LINE IN FRONT OF EACH POWER YOU ARE GRANTING. TO WITHHOLD A POWER, DO NOT INITIAL THE LINE IN FRONT OF IT. YOU MAY, BUT NEED NOT, CROSS OUT EACH POWER WITHHELD.\n"""
 
 form = """INITIAL
 ___ (A) Real property transactions.
@@ -33,29 +32,20 @@ ___ (J) Personal and family maintenance.
 ___ (K) Benefits from social security, Medicare, Medicaid, or other governmental programs, or civil or military service.
 ___ (L) Retirement plan transactions.
 ___ (M) Tax matters.
-___ (N) ALL OF THE POWERS LISTED ABOVE.
+___ (N) ALL OF THE POWERS LISTED ABOVE.\n
 """
 
-supplement = """YOU NEED NOT INITIAL ANY OTHER LINES IF YOU INITIAL LINE (N).
-
-SPECIAL INSTRUCTIONS:
-ON THE FOLLOWING LINES YOU MAY GIVE SPECIAL INSTRUCTIONS LIMITING OR EXTENDING THE POWERS GRANTED TO YOUR AGENT.
-
-[empty_line]
-
-[empty_line]
-
-UNLESS YOU DIRECT OTHERWISE ABOVE, THIS POWER OF ATTORNEY IS EFFECTIVE IMMEDIATELY AND WILL CONTINUE UNTIL IT IS REVOKED.
+supplement = """YOU NEED NOT INITIAL ANY OTHER LINES IF YOU INITIAL LINE (N).\n\nSPECIAL INSTRUCTIONS:
+ON THE FOLLOWING LINES YOU MAY GIVE SPECIAL INSTRUCTIONS LIMITING OR EXTENDING THE POWERS GRANTED TO YOUR AGENT.\n\n[empty_line]
+\n\n[empty_line]\n\nUNLESS YOU DIRECT OTHERWISE ABOVE, THIS POWER OF ATTORNEY IS EFFECTIVE IMMEDIATELY AND WILL CONTINUE UNTIL IT IS REVOKED.
 """
 
-incapacity = """This power of attorney will continue to be effective even though I become incapacitated.
-
+incapacity = """This power of attorney will continue to be effective even though I become incapacitated.\n
 """
 
-durable_strike = """STRIKE THE PRECEDING SENTENCE IF YOU DO NOT WANT THIS POWER OF ATTORNEY TO CONTINUE IF YOU BECOME INCAPACITATED.  """
-multiple_agent = """EXERCISE OF POWER OF ATTORNEY WHERE MORE THAN ONE AGENT DESIGNATED
-If I have designated more than one agent, the agents are to act [joint_powers].
-"""
+durable_strike = """STRIKE THE PRECEDING SENTENCE IF YOU DO NOT WANT THIS POWER OF ATTORNEY TO CONTINUE IF YOU BECOME INCAPACITATED.\n\n"""
+multiple_agent = """EXERCISE OF POWER OF ATTORNEY WHERE MORE THAN ONE AGENT DESIGNATED\n
+If I have designated more than one agent, the agents are to act [joint_powers].\n\n"""
 
 
 signature_block = """I agree that any third party who receives a copy of this document may act under it. A third party may seek identification. Revocation of the power of attorney is not effective as to a third party until the third party has actual knowledge of the revocation. I agree to indemnify the third party for any claims that arise against the third party because of reliance on this power of attorney.
@@ -91,3 +81,6 @@ WITNESS my hand and official seal:
 [signature_line]
 Notary Public
 """
+
+NORMAL = 12
+SMALL = 12 

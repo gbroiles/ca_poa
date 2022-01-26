@@ -44,29 +44,25 @@ pdf.set_font("Times", "", 14)
 pdf.multi_cell(
     0,
     6,
-    "California Uniform Statutory Form\nPower of Attorney\n(California Probate Code §4401)",
+    "California Uniform Statutory Form Power of Attorney\n(California Probate Code §4401)",
     border=0,
     align="C",
 )
-pdf.set_font("Times", "", 9)
+pdf.set_font("Times", "", resource.SMALL)
 pdf.write(4, resource.preamble)
-pdf.set_font("Times", "", 12)
+pdf.set_font("Times", "", resource.NORMAL)
 pdf.write(5, appointment)
-pdf.set_font("Times", "", 9)
+pdf.set_font("Times", "", resource.SMALL)
 pdf.write(4, resource.preamble2)
-pdf.set_font("Times", "", 12)
+pdf.set_font("Times", "", resource.NORMAL)
 pdf.write(5, form)
-pdf.set_font("Times", "", 9)
 pdf.write(4, supplement)
 pdf.add_page()
-pdf.set_font("Times", "", 12)
 pdf.write(5, incapacity)
-pdf.set_font("Times", "", 9)
 pdf.write(4, durable_strike)
-pdf.set_font("Times", "", 12)
 pdf.write(5, multiple_agent)
 pdf.write(5, signature_block)
-pdf.set_font("Times", "", 9)
-pdf.multi_cell(80, 4, resource.notary_box, border=1, align="L")
+pdf.set_font("Times", "", resource.SMALL)
+pdf.multi_cell(0, 4, resource.notary_box, border=1, align="L")
 pdf.write(4, notary_ack)
 pdf.output("poa_test.pdf", "F")
